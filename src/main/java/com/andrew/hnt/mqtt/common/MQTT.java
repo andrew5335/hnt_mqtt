@@ -93,8 +93,11 @@ public class MQTT implements MqttCallback {
 	
 	public void subscribe(int qos) {
 		try {
+			System.out.println("===== 001");
 			Client.subscribe(topic, qos);
 		} catch(MqttException mqe) {
+			System.out.println("===== Error : " + mqe.getMessage());
+			System.out.println("===== Error : " + mqe.toString());
 			mqe.printStackTrace();
 		}
 	}
